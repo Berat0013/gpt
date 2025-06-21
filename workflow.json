@@ -1,0 +1,44 @@
+{
+  "name": "Reddit Video Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://www.reddit.com/r/GetMotivated.json"
+      },
+      "id": 1,
+      "name": "Fetch Reddit",
+      "type": "httpRequest",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "return items;"
+      },
+      "id": 2,
+      "name": "Transform",
+      "type": "function",
+      "typeVersion": 1,
+      "position": [
+        400,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Fetch Reddit": {
+      "main": [
+        [
+          {
+            "node": "Transform",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
